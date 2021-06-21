@@ -27,9 +27,9 @@ Bb = [0 0 1; 0 0 0; -1 0 0];
 Bc = [0 0 0; 0 0 1; 0 -1 0];
 
 Pnew = cell(size(P));
-for i=1:length(P);
+for i=1:length(P)
     % Determine camera calibration. If camera is not calibrated, K will
-    % still be constant throughout the update step.
+    % still be constant throughout the update step. Updates for Git
     [K,Ri] = rq(P{i});
     R0 = Ri(:,1:3);
     t0 = Ri(:,4);
